@@ -364,7 +364,7 @@ function placeLetter(details) {
             placedCorrectlyNo += 1;
 
             if (placedCorrectlyNo === 10) {
-                result.textContent = "Nice work, Agent! One step closer to cracking the combination!";
+                result.textContent = "Fantastic work, Agent! You've successfully mapped each rock shape to its letter. Your keen observation skills are stellar!";
                 result.style.color = "green";
                 result.style.display = "block";
             }
@@ -401,8 +401,8 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerStep3").value.trim().toUpperCase();
     var result = document.getElementById("resultStep3");
 
-    if (userAnswer === "FEGABHJCID") {
-        result.textContent = "Well done, Agent! You're nearly there with the combination!";
+    if (userAnswer === "FGBAEDHCJI") {
+        result.textContent = "Awesome job, Agent! You've correctly matched each rock shape to its letter. Your attention to detail is out of this world!";
         result.style.color = "green";
         keyInputQ1.disabled = true;
         keyInputQ1.style.background = "#C8E4B2";
@@ -412,7 +412,7 @@ function checkAnswerQ1() {
         puzzleContainer2.style.display = 'none';
         puzzleContainer3.style.display = 'none';
     } else {
-        result.textContent = "Agent, this is a challenging one. Keep at it!";
+        result.textContent = "Oops, Agent! The mapping isn't accurate. Let's scan the screen one more time and uncover that hidden map!";
         result.style.color = "red";
         keyInputQ1.style.background = "#FF7676";
     }
@@ -476,7 +476,7 @@ const matchedSequence = matchSequence(sequence, shiftAmount);
 
 updateKeypadButtons(matchedSequence);
 // Output the matched sequence to the console
-// console.log("Matched Sequence:", matchedSequence);
+console.log("Matched Sequence:", matchedSequence);
 
 
 // Highlight corresponding letters in alphabet-box1 when hovering over letters in alphabet-box2
