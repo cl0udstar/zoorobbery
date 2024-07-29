@@ -233,12 +233,12 @@ function regenerateGraph() {
     document.getElementById("checkCoordinates").style.display = "block";
     alertMessage.textContent = ('');
     if (correctAnswer == 1){
-        document.getElementById("Practice1").style.display = "none";
-        document.getElementById("Practice2").style.display = "block";
+        document.getElementById("throw1").style.display = "none";
+        document.getElementById("throw2").style.display = "block";
     }
     if (correctAnswer == 2){
-        document.getElementById("Practice2").style.display = "none";
-        document.getElementById("Practice3").style.display = "block";
+        document.getElementById("throw2").style.display = "none";
+        document.getElementById("throw3").style.display = "block";
     }
     // Regenerate random coordinates
     points = generateRandomCoordinates();
@@ -294,9 +294,7 @@ function next(){
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("input-container").style.display = "none";
     document.getElementById("checkCoordinates").style.display = "none";
-    document.getElementById("title1").style.display = "none";
-    document.getElementById("title2").style.display = "none";
-    document.getElementById("Practice3").style.display = "none";
+    document.getElementById("throw3").style.display = "none";
     document.getElementById("next3").style.display = "none";
     document.getElementById("alertMessage").style.display = "none";
     document.getElementById("rule1").style.display = "none";
