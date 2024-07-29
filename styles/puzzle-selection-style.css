@@ -229,3 +229,22 @@
     text-decoration: none;
     box-shadow: 0 0 20px 2px #B4B4B8;
 }
+
+.audio-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    gap: 10px;
+}
+
+.audio-btn {
+    background: black;
+    border: none;
+    border-radius: 10px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+.audio-btn:hover {
+    color: #FEFFE2;
+}

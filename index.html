@@ -74,6 +74,10 @@
                 audio.currentTime = 0; // Reset the audio to the beginning
                 playPauseBtn.innerHTML = '<i class="fa-solid fa-volume-mute"></i>'; // Reset icon to mute
             });
+
+            audio.addEventListener('ended', function() {
+                playPauseBtn.innerHTML = '<i class="fa-solid fa-volume-mute"></i>'; // Change icon to mute when audio ends
+            });
         </script>
     </div>
     

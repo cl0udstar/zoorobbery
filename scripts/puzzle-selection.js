@@ -113,11 +113,46 @@ const functionCards = () => {
                                             <h1>MISSION BRIEF</h1>\
                                             <p>'+data.para+'</p>\
                                             <div class="background_back"></div>\
+                                            <div class="audio-controls">\
+                                                <a class="audio-btn button" id="play-pause-btn'+data.cardNum+'" onclick="togglePlayPause('+data.cardNum+')"><i class="fa-solid fa-volume-mute"></i></a>\
+                                                <a class="audio-btn button" id="reset-btn'+data.cardNum+'" onclick="resetAudio('+data.cardNum+')"><i class="fa-solid fa-arrow-rotate-left"></i></a>\
+                                            </div>\
                                             <button class="return" onclick="handle2ndClick'+data.cardNum+'()"><i class="fa-solid fa-arrow-rotate-left"></i></button>\
                                             <a href="'+data.link+'"><button class="start">Start</button></a>\
+                                            <audio id="audio'+data.cardNum+'" src="'+data.audioSrc+'" preload="auto"></audio>\
                                         </div>\
                                     </div>';
-    })
+    });
+
+    // Ensure the DOM is updated before adding event listeners
+    arrayData.forEach((data) => {
+        document.getElementById('audio' + data.cardNum).addEventListener('ended', function() {
+            document.getElementById('play-pause-btn' + data.cardNum).innerHTML = '<i class="fa-solid fa-volume-mute"></i>';
+        });
+    });
+}
+
+function togglePlayPause(cardNum) {
+    const audio = document.getElementById('audio' + cardNum);
+    audio.volume = 0.1; // Set the fixed volume to 0.1
+    const playPauseBtn = document.getElementById('play-pause-btn' + cardNum);
+
+    if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fa-solid fa-volume-mute"></i>';
+    }
+}
+
+function resetAudio(cardNum) {
+    const audio = document.getElementById('audio' + cardNum);
+    const playPauseBtn = document.getElementById('play-pause-btn' + cardNum);
+
+    audio.pause();
+    audio.currentTime = 0;
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-volume-mute"></i>';
 }
 
 function handleClick1() {
