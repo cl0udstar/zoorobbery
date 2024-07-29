@@ -8,7 +8,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #c8e4b2, #7eaa92)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "You begin your mission by looking at some of the data in the zoo. Is it realistic or has it already been tampered with by the hackers.",
+        para: "You begin by helping the crew to enter the spaceship. Crew member Alisha is keen on security but she has changed the combination and forgotten the code.",
         link: "../puzzles/puzzle-1.html",
         lock: "lock1",
         frontFeatures: "front1"
@@ -21,7 +21,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #c8e4b2, #7eaa92)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "Help! You now visit the zoo and it is in complete chaos. There are enclosures wide open and there are animals everywhere. There are also no lights working, water is running low and communications are out.",
+        para: "– The on-board computer has a problem and it has lost some of its sensor data necessary to record the journey. Can you help Science Officer Hamis recover the data?",
         link: "../puzzles/puzzle-2.html",
         lock: "lock2",
         frontFeatures: "front2"
@@ -34,7 +34,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #c8e4b2, #7eaa92)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "Now that the animals are safely locked back in their enclosures, we need to fix all the systems that the hackers have destroyed.",
+        para: "The final batch of Peelywally Crystals needs to be picked up by the spaceship before departure. Help the team find where these are located.",
         link: "../puzzles/puzzle-3.html",
         lock: "lock3",
         frontFeatures: "front3"
@@ -47,7 +47,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #ec8f5e, #f1eb90)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "The Zoo’s sensors have been damaged. We need your help to quickly choose which sensors would be best to replace them.",
+        para: "One of the main hazards on planet BRAW5 is the strong geomagnetic fields. These are being detected on sensors across the surface of the planet. Based on sensor data recorded in the following bar chart, plot the best rout for the explorers to take to Crystal Mountain.",
         link: "../puzzles/puzzle-4.html",
         lock: "lock4",
         frontFeatures: "front4"
@@ -60,7 +60,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #ec8f5e, #f1eb90)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "Quick, the hacker has ramped up the temperature of the reptile house to a hazardous level, the animals are in grave danger!",
+        para: "The data from sensors measuring the diameter of rocks on BRAW5 as the planet warms and cools in the sunlight has been lost. Help the crew to sort the data and password protect it.",
         link: "../puzzles/puzzle-5.html",
         lock: "lock5",
         frontFeatures: "front5"
@@ -73,7 +73,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #ec8f5e, #f1eb90)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "We are almost there. We have made it to the zoo headquarters.",
+        para: "The crew are nearly ready for their return to earth.",
         link: "../puzzles/puzzle-6.html",
         lock: "lock6",
         frontFeatures: "front6"
@@ -86,7 +86,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #dc0000, #850000, #ec8f5e)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "We need to get the Zoo’s IOT system back up and running and protected. You can help us.",
+        para: "Okay, we are ready to take off and return to earth. The last clue on how to fire the engines is in this puzzle. We need your help.",
         link: "../puzzles/puzzle-7.html",
         lock: "lock7",
         frontFeatures: "front7"
