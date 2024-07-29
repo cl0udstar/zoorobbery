@@ -1,7 +1,7 @@
 const div = document.querySelector(".home-text");
 const text1 = "It's Commander Sheonagh MacDonald from the Scottish Space Agency in the year 2052 and we need your help to bring our team of space explorers back from the Plant BRAW5 in the Fearty Galaxy.";
 const text2 = "Our intrepid explorers have ventured further than any other humans to look for Peelywally Crystals which will triple our renewable energy supplies in Scotland.";
-const text3 = "However, whilst doing that, they have run into danger and need you to help them to get home safely";
+const text3 = "However, whilst doing that, they have run into danger and need you to help them to get home safely.";
 const text4 = "You will complete sever missions which will bring them back to splashdown in the North Sea, just off St Andrews.";
 
 let text1Finished = false;
