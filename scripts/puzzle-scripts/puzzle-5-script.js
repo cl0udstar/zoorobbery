@@ -469,7 +469,7 @@ const box2 = document.querySelector('.alphabet-box2');
 const shiftedBox = document.querySelector('.alphabet-box2');
 
 const shiftAmount = caesarShiftAlphabet(shiftedBox);
-const sequence = 'FEGABHJCID';
+const sequence = 'FGBAEDHCJI';
 
 // Match the sequence against the shifted alphabet
 const matchedSequence = matchSequence(sequence, shiftAmount);
