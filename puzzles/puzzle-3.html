@@ -28,16 +28,13 @@
             </div>
         </div>
         <div class="header-text">
-            <p id="rule1">Our current priority here is mending the water filtration tank system that supplies the whole zoo with water. The tank has been split open at various points and you have to fire the laser welder at the cracks to repair them. You have 3 practice shots, before you move on to the real water tank.</p>
-            <p id="rule2" style="display: none;">Great work, now it’s time to mend the tank for real. The closer to the crack, the better the fix and the more water we can save.</p>
+            <p id="rule1">You have three practice attempts at guiding the space ship by coordinates.</p>
+            <p id="rule2" style="display: none;">Great work, now you have control of the spaceship navigation system. You should use the controls onscreen to guide the spaceship.</p>
         </div>
         <div class="puzzle_container">
-            <h1 id="title1">Laser welding of the water tank</h1>
-            <h2 id="title2">Enter the coordinates of the crack.</h2>
-            <br>
-            <h1 id="throw1">Shot 1</h1>
-            <h1 id="throw2" style="display: none;">Shot 2</h1>
-            <h1 id="throw3" style="display: none;">Shot 3</h1>
+            <h1 id="Practice1">Practice 1</h1>
+            <h1 id="Practice2" style="display: none;">Practice 2</h1>
+            <h1 id="Practice3" style="display: none;">Practice 3</h1>
             <div id="graph-container">
                 <svg id="graph-svg" width="100%" height="100%" viewBox="0 0 600 500"></svg>
             </div>
@@ -54,9 +51,9 @@
             </div>
         
             <button class="centerButton" id="checkCoordinates" onclick="userInput(generatedCoordinates)">Check Coordinates</button>
-            <button class="centerButton" id="next" onclick="regenerateGraph()" style="display: none;">Next Laser Weld</button>
-            <button class="centerButton" id="next2" onclick="regenerateGraph()" style="display: none;">Next Laser Weld</button>
-            <button class="centerButton" id="next3" onclick="next()" style="display: none;">Next Laser Weld</button>
+            <button class="centerButton" id="next" onclick="regenerateGraph()" style="display: none;">Next Practice Attempt</button>
+            <button class="centerButton" id="next2" onclick="regenerateGraph()" style="display: none;">Next Practice Attempt</button>
+            <button class="centerButton" id="next3" onclick="next()" style="display: none;">Next Practice Attempt</button>
             
             <div id="alertMessage" style="color: green;"></div>
         
@@ -69,9 +66,9 @@
                 <button class="centerButton" id="toggleButton" onclick="toggleAnimation()">Stop Horizontal Movement</button>
                 <button class="centerButton" id="stopAnimation" onclick="stopAnimation()" style="display: none;">Stop Vertical Movement</button>
 
-                <p id="para1" style="display: none;">Your last weld is represented by the green dot. Find the coordinates</p>
-                <p id="para2" style="display: none;">Great, now give the coordinates of another point on the tank that needs welded.</p>
-                <p id="para3" style="display: none;">Good job agent, the tank is now safe and you can continue to your next mission.</p>
+                <p id="para1" style="display: none;">You have found crystals! These are represented by the green dot. Find the coordinates</p>
+                <p id="para2" style="display: none;">Great, well done. There is a smaller batch of crystals located at blue dot on the map. Choose the correct button for this site.</p>
+                <p id="para3" style="display: none;">Good job agent, the crystals are now located and you can continue to your next mission.</p>
                 
                 <div class="exampleAnswers" id="exampleAnswers" style="display: none;">
                     <div class="exampleAnswer" id="exampleAnswer1" >Coordinates: <span id="option1"></span></div>
