@@ -131,6 +131,10 @@
     display: inline-block;
 }
 
+.sortable-list p{
+    margin: 10px;
+}
+
 .sortable-list .item1, .sortable-list .item2 {
     cursor: pointer;
     list-style: none;
