@@ -1,8 +1,8 @@
 const div = document.querySelector(".home-text");
-const text1 = "Agents, we have a ruthless hacker on our hands! The Cyber Security Data Division has been monitoring a series of breaches, and we've identified the zoo’s IOT sensors technology as a critcal target. We need your exceptional skills in data analysis to save the animals and restore order.";
-const text2 = "Your mission is of the utmost importance. The hacker's actions have caused chaos throughout the zoo, and it's up to you to save the animals and bring the system back under control.";
-const text3 = "This is not just any mission, we need data experts – and we think you are exactly what we need! Your experience of collectng, analysing and visualising data has prepared you for this moment. Trust in your abilities, use every skill and resource at your disposal, and bring the zoo back to safety.";
-const text4 = "Good luck, Agents. The fate of the zoo rests in your hands.";
+const text1 = "It's Commander Sheonagh MacDonald from the Scottish Space Agency in the year 2052 and we need your help to bring our team of space explorers back from the Plant BRAW5 in the Fearty Galaxy.";
+const text2 = "Our intrepid explorers have ventured further than any other humans to look for Peelywally Crystals which will triple our renewable energy supplies in Scotland.";
+const text3 = "However, whilst doing that, they have run into danger and need you to help them to get home safely";
+const text4 = "You will complete sever missions which will bring them back to splashdown in the North Sea, just off St Andrews.";
 
 let text1Finished = false;
 let text2Finished = false;
