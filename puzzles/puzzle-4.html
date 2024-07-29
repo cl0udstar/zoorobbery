@@ -38,6 +38,10 @@
         </div>
 
         <div class="puzzle_container">
+            
+        </div>
+
+        <div class="puzzle_container">
             <p>Braw5 Geomagnetic Field</p>
             <div class="graph">
                 <img src="../assets/backgrounds/puzzle4-graph-spacejourney.png" alt="bar-graph">
@@ -246,7 +250,7 @@
             </div>
 
             <div class="puzzle-q2">
-                <p>What is the difference between the lowest and highest Alpha values?</p>
+                <p>If only route Blue was chosen, what would be the average field reading?</p>
                 <div class="q-answer">
                     <input type="text" placeholder="Your answer..." id="userAnswerQ2" class="user-input" autocomplete="off">  
                 </div>
@@ -259,7 +263,7 @@
             </div>
 
             <div class="puzzle-q3">
-                <p>What location is the difference between Alpha and Beta the greatest?</p>
+                <p>If only route Orange was chosen, what would be the average field reading?</p>
                 <div class="q-answer">
                     <input type="text" placeholder="Your answer..." id="userAnswerQ3" class="user-input" autocomplete="off">  
                 </div>
@@ -268,6 +272,19 @@
 
                 <div class="answer-check" onclick="checkAnswerQ3()">
                     <button class="check-btn" id="check-q3">Check Answer</button>
+                </div>
+            </div>
+
+            <div class="puzzle-q4">
+                <p>If the route through Delta Canyon was blocked, what would be the lowest average field reading?</p>
+                <div class="q-answer">
+                    <input type="text" placeholder="Your answer..." id="userAnswerQ4" class="user-input" autocomplete="off">  
+                </div>
+
+                <p id="result4" style="display: none;"></p>
+
+                <div class="answer-check" onclick="checkAnswerQ4()">
+                    <button class="check-btn" id="check-q4">Check Answer</button>
                 </div>
             </div>
             <div class="next-puzzle" id="next-puzzle">

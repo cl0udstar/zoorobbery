@@ -31,6 +31,7 @@ const correctSequence = [
     ['route10-2']
 ];
 
+var SCheck = false;
 var Q1Check = false;
 var Q2Check = false;
 var Q3Check = false;
@@ -64,7 +65,7 @@ function checkSequence() {
 
     var result = document.getElementById("result");
     if (correct) {
-        Q4Check = true;
+        SCheck = true;
         checkCompletion();
         
         result.textContent = "Well done, Agent! You've successfully plotted the safest route through the geomagnetic fields to reach the main Peelywally Crystal deposit site at Crystal Mountain. Your careful planning will protect the explorer buggy's electronics. Excellent work!";
@@ -100,16 +101,16 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer === "beta") {
+    if (userAnswer === "82.5" || userAnswer === "82,5") {
         Q1Check = true;
         checkCompletion();
         
-        result.textContent = "Excellent work, Agent! You've correctly identified the product range with the highest mean strength. Your analytical skills are top-notch!";
+        result.textContent = "Awesome job, Agent! You've correctly calculated the average geomagnetic field reading on the safest route. You're a top-notch explorer on your way to Crystal Mountain!";
         result.style.color = "green";
         keyInputQ1.disabled = true;
         keyInputQ1.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Alert, Agent! The selected product range does not have the highest mean strength. Let's review the data and find the true leader. Your mission continues! (Hint lowest negative value)";
+        result.textContent = "Uh-oh, Agent! The average geomagnetic field reading seems off. Let's recheck the data to ensure a safe journey!";
         result.style.color = "red";
         keyInputQ1.style.background = "#FF7676";
     }
@@ -130,16 +131,16 @@ function checkAnswerQ2() {
     var userAnswer = document.getElementById("userAnswerQ2").value.trim().toLowerCase();
     var result = document.getElementById("result2");
 
-    if (userAnswer === "45" || userAnswer === "fortyfive" || userAnswer === "forty five" || userAnswer === "forty-five") {
+    if (userAnswer === "90") {
         Q2Check = true;
         checkCompletion();
         
-        result.textContent = "Outstanding, Agent! You've accurately calculated the difference between the lowest and highest Alpha values. Your precision is impressive!";
+        result.textContent = "Awesome job, Agent! You've nailed the average field reading for route Blue. You're a true explorer on the path to adventure!";
         result.style.color = "green";
         keyInputQ2.disabled = true;
         keyInputQ2.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Attention, Agent! The difference between the lowest and highest Alpha values seems incorrect. Let's re-evaluate the data to find the accurate range. Keep pushing forward!";
+        result.textContent = "Uh-oh, Agent! The average field reading for route Blue seems off. Let's double-check the data to ensure a safe and exciting journey!";
         result.style.color = "red";
         keyInputQ2.style.background = "#FF7676";
     }
@@ -160,24 +161,54 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "headquarters") {
+    if (userAnswer === "87.5" || userAnswer === "87,5") {
         Q3Check = true;
         checkCompletion();
         
-        result.textContent = "Fantastic, Agent! You've correctly pinpointed the location where the difference between Alpha and Beta is the greatest. Your sharp analysis is commendable!";
+        result.textContent = "Fantastic work, Agent! You've correctly figured out the average field reading for route Orange. Your adventure is right on track!";
         result.style.color = "green";
         keyInputQ3.disabled = true;
         keyInputQ3.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent! The identified location does not have the greatest difference between Alpha and Beta. Let's re-examine the data and find the correct location. Your mission is not yet complete!";
+        result.textContent = "Agent! The average field reading for route Orange doesn't look right. Let's double-check to make sure your journey stays safe!";
         result.style.color = "red";
         keyInputQ3.style.background = "#FF7676";
     }
     result.style.display = "block";
 }
 
+
+// Forth Question
+var keyInputQ4 = document.getElementById("userAnswerQ4");
+keyInputQ4.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("check-q4").click();
+    }
+});
+
+function checkAnswerQ4() {
+    var userAnswer = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
+    var result = document.getElementById("result4");
+
+    if (userAnswer === "84") {
+        Q4Check = true;
+        checkCompletion();
+        
+        result.textContent = "Great job, Agent! You've found the lowest average field reading if the route through Delta Canyon is blocked. You're navigating like a pro!";
+        result.style.color = "green";
+        keyInputQ4.disabled = true;
+        keyInputQ4.style.background = "#C8E4B2";
+    } else {
+        result.textContent = "Alert, Agent! The lowest average field reading doesn't seem right. Let's recheck to make sure you find the safest path around Delta Canyon!";
+        result.style.color = "red";
+        keyInputQ4.style.background = "#FF7676";
+    }
+    result.style.display = "block";
+}
+
 function checkCompletion() {
-    if (Q1Check && Q2Check && Q3Check && Q4Check) {
+    if (SCheck && Q1Check && Q2Check && Q3Check && Q4Check) {
         setPuzzleCompletionStatus(4, 'complete');
         var nextPuzzle = document.getElementById("next-puzzle");
         nextPuzzle.style.display = "block";
