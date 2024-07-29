@@ -401,7 +401,7 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerStep3").value.trim().toUpperCase();
     var result = document.getElementById("resultStep3");
 
-    if (userAnswer === "FGBAEDHCJI") {
+    if (userAnswer === sequence) {
         result.textContent = "Awesome job, Agent! You've correctly matched each rock shape to its letter. Your attention to detail is out of this world!";
         result.style.color = "green";
         keyInputQ1.disabled = true;
