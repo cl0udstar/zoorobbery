@@ -9,17 +9,17 @@ let points = [];
 
 // Define the correct coordinates for the star shape
 const correctCoordinates = [
-    { x: 2, y: 1 },
-    { x: 6, y: 13 },
-    { x: 7, y: 13 },
-    { x: 8, y: 13 },
-    { x: 12, y: 1 },
-    { x: 10, y: 1 },
-    { x: 8, y: 6 },
-    { x: 7, y: 6 },
-    { x: 6, y: 6 },
-    { x: 4, y: 1 },
-    { x: 2, y: 1 },
+    { x: 2, y: 2 },
+    { x: 2, y: 13 },
+    { x: 4, y: 13 },
+    { x: 6, y: 12 },
+    { x: 7, y: 11 },
+    { x: 8, y: 9 },
+    { x: 8, y: 7 },
+    { x: 7, y: 5 },
+    { x: 6, y: 4 },
+    { x: 4, y: 2 },
+    { x: 2, y: 2 },
 ];
 
 
@@ -199,7 +199,7 @@ function checkAnswerSecondPuzzle() {
     const answer = document.getElementById('answer').value.trim().toLowerCase();
     const feedback = document.getElementById('feedback');
 
-    if (answer === "alpaca") {
+    if (answer === "delta canyon") {
         feedback.textContent = "Correct, well done agent!";
         feedback.classList.remove('error-message'); // Remove error message class
         feedback.classList.add('success-message'); // Add success message class
@@ -214,11 +214,11 @@ function checkAnswerSecondPuzzle() {
         var nextPuzzle = document.getElementById("next-puzzle");
         nextPuzzle.style.display = "block";
     } else {
-        feedback.textContent = "Incorrect! Try again agent!";
+        feedback.textContent = "Incorrect! Try again agent.";
         feedback.classList.add('error-message'); // Add error message class
         feedback.classList.remove('success-message'); // Remove success message class
         // You can provide a hint here, e.g., display a hint message
-        document.getElementById('hint').textContent = "Hint: Search for a animal with a slender neck and a woolly body, reminiscent of a certain fluffy creature.'";
+        document.getElementById('hint').textContent = "Hint: Correctly plot the coordinates on the graph below to get the password for the laptop.";
         document.getElementById('answer').style.background = "#FF7676";
     }
 }

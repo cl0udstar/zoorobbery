@@ -78,7 +78,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #ec8f5e, #f1eb90)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "The crew are nearly ready for their return to earth.",
+        para: "The crew are nearly ready for their return to earth. ",
         link: "../puzzles/puzzle-6.html",
         lock: "lock6",
         frontFeatures: "front6",
