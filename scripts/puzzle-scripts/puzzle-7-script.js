@@ -371,7 +371,7 @@ function assignWordsToRectangles(words, smallRectangles) {
 
 function checkFinalSequence() {
     const rectangleWords = [];
-    const originalWords = ["New", "firewall", "code", "is", "changed", "to", "AF!4657!@"];
+    const originalWords = ["The", "code", "for", "lift", "off", "is", "98DFT2@"];
     let correctCount = 0; // Initialize a counter for correct words
 
     // Get the words from the rectangles
