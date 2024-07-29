@@ -152,7 +152,7 @@
     width: 43px;
     height: 43px;
     margin-right: 12px;
-    border-radius: 50%;
+    border-radius: 10%;
     object-fit: cover;
 }
 
