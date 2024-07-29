@@ -11,7 +11,8 @@ const arrayData = [
         para: "You begin by helping the crew to enter the spaceship. Crew member Alisha is keen on security but she has changed the combination and forgotten the code.",
         link: "../puzzles/puzzle-1.html",
         lock: "lock1",
-        frontFeatures: "front1"
+        frontFeatures: "front1",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-2",
@@ -21,10 +22,11 @@ const arrayData = [
         color: "linear-gradient(-135deg, #c8e4b2, #7eaa92)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "– The on-board computer has a problem and it has lost some of its sensor data necessary to record the journey. Can you help Science Officer Hamis recover the data?",
+        para: "- The on-board computer has a problem and it has lost some of its sensor data necessary to record the journey. Can you help Science Officer Hamis recover the data?",
         link: "../puzzles/puzzle-2.html",
         lock: "lock2",
-        frontFeatures: "front2"
+        frontFeatures: "front2",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-3",
@@ -37,7 +39,8 @@ const arrayData = [
         para: "The final batch of Peelywally Crystals needs to be picked up by the spaceship before departure. Help the team find where these are located.",
         link: "../puzzles/puzzle-3.html",
         lock: "lock3",
-        frontFeatures: "front3"
+        frontFeatures: "front3",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-4",
@@ -50,7 +53,8 @@ const arrayData = [
         para: "One of the main hazards on planet BRAW5 is the strong geomagnetic fields. These are being detected on sensors across the surface of the planet. Based on sensor data recorded in the following bar chart, plot the best rout for the explorers to take to Crystal Mountain.",
         link: "../puzzles/puzzle-4.html",
         lock: "lock4",
-        frontFeatures: "front4"
+        frontFeatures: "front4",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-5",
@@ -63,7 +67,8 @@ const arrayData = [
         para: "The data from sensors measuring the diameter of rocks on BRAW5 as the planet warms and cools in the sunlight has been lost. Help the crew to sort the data and password protect it.",
         link: "../puzzles/puzzle-5.html",
         lock: "lock5",
-        frontFeatures: "front5"
+        frontFeatures: "front5",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-6",
@@ -76,7 +81,8 @@ const arrayData = [
         para: "The crew are nearly ready for their return to earth.",
         link: "../puzzles/puzzle-6.html",
         lock: "lock6",
-        frontFeatures: "front6"
+        frontFeatures: "front6",
+        audioSrc: "../assets/AudioSample.mp3"
     },
     {
         id: "card-7",
@@ -89,7 +95,8 @@ const arrayData = [
         para: "Okay, we are ready to take off and return to earth. The last clue on how to fire the engines is in this puzzle. We need your help.",
         link: "../puzzles/puzzle-7.html",
         lock: "lock7",
-        frontFeatures: "front7"
+        frontFeatures: "front7",
+        audioSrc: "../assets/AudioSample.mp3"
     }
 ]
 
