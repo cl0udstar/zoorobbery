@@ -22,7 +22,7 @@ const arrayData = [
         color: "linear-gradient(-135deg, #c8e4b2, #7eaa92)",
         imageWidth: "300px",
         imageHeight: "350px",
-        para: "- The on-board computer has a problem and it has lost some of its sensor data necessary to record the journey. Can you help Science Officer Hamis recover the data?",
+        para: "The on-board computer has a problem and it has lost some of its sensor data necessary to record the journey. Can you help Science Officer Hamis recover the data?",
         link: "../puzzles/puzzle-2.html",
         lock: "lock2",
         frontFeatures: "front2",

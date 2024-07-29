@@ -80,7 +80,7 @@ var Q3Check = false;
 var Q4Check = false;
 var Q5Check = false;
 var Q6Check = false;
-var Q7Check = false
+
 
 ////////////////////////////////////////////////
 // Question 1
@@ -97,7 +97,7 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer === "polar bear") {
+    if (userAnswer === "crystal mountain") {
         Q1Check = true;
         checkCompletion();
         
@@ -106,7 +106,7 @@ function checkAnswerQ1() {
         keyInputQ1.disabled = true;
         keyInputQ1.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint: It loves to swim and hunt seals.";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ1.style.background = "#FF7676";
     }
@@ -130,7 +130,7 @@ function checkAnswerQ2() {
     var userAnswer = document.getElementById("userAnswerQ2").value.trim().toLowerCase();
     var result = document.getElementById("result2");
 
-    if (userAnswer === "cheetah") {
+    if (userAnswer === "8,9") {
         Q2Check = true;
         checkCompletion();
         
@@ -139,7 +139,7 @@ function checkAnswerQ2() {
         keyInputQ2.disabled = true;
         keyInputQ2.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint: It has spots and incredible speed to chase down its prey.";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ2.style.background = "#FF7676";
     }
@@ -163,7 +163,7 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "crocodile" ) {
+    if (userAnswer === "12:00" ) {
         Q3Check = true;
         checkCompletion();
         
@@ -172,7 +172,7 @@ function checkAnswerQ3() {
         keyInputQ3.disabled = true;
         keyInputQ3.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint: It snaps its teeth and often basks in the sun near rivers and swamps. ";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ3.style.background = "#FF7676";
     }
@@ -196,7 +196,7 @@ function checkAnswerQ4() {
     var userAnswer = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result4");
 
-    if (userAnswer === "owl") {
+    if (userAnswer === "-15") {
         Q4Check = true;
         checkCompletion();
         
@@ -205,7 +205,7 @@ function checkAnswerQ4() {
         keyInputQ4.disabled = true;
         keyInputQ4.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint:  It can rotate it’s head right around.";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ4.style.background = "#FF7676";
     }
@@ -229,7 +229,7 @@ function checkAnswerQ5() {
     var userAnswer = document.getElementById("userAnswerQ5").value.trim().toLowerCase();
     var result = document.getElementById("result5");
 
-    if (userAnswer === "shark") {
+    if (userAnswer === "45") {
         Q5Check = true;
         checkCompletion();
         
@@ -238,7 +238,7 @@ function checkAnswerQ5() {
         keyInputQ5.disabled = true;
         keyInputQ5.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint: It swims in the ocean and is known for being a top predator";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ5.style.background = "#FF7676";
     }
@@ -262,7 +262,7 @@ function checkAnswerQ6() {
     var userAnswer = document.getElementById("userAnswerQ6").value.trim().toLowerCase();
     var result = document.getElementById("result6");
 
-    if (userAnswer === "tarantula" ) {
+    if (userAnswer === "6.5" ) {
         Q6Check = true;
         checkCompletion();
         
@@ -271,42 +271,9 @@ function checkAnswerQ6() {
         keyInputQ6.disabled = true;
         keyInputQ6.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent, use this hint: A huge spider!";
+        result.textContent = "Incorrect, Try Again Agent. Hint: Use the Posts Above To Find The Answer";
         result.style.color = "red";
         keyInputQ6.style.background = "#FF7676";
-    }
-    result.style.display = "block";
-}
-////////////////////////////////////////////////
-
-
-////////////////////////////////////////////////
-// Question 7
-////////////////////////////////////////////////
-var keyInputQ7 = document.getElementById("userAnswerQ7");
-keyInputQ7.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("check-q7").click();
-    }
-});
-
-function checkAnswerQ7() {
-    var userAnswer = document.getElementById("userAnswerQ7").value.trim().toLowerCase();
-    var result = document.getElementById("result7");
-
-    if (userAnswer === "326514") {
-        Q7Check = true;
-        checkCompletion();
-        
-        result.textContent = "Well done, Agent.";
-        result.style.color = "green";
-        keyInputQ7.disabled = true;
-        keyInputQ7.style.background = "#C8E4B2";
-    } else {
-        result.textContent = "Incorrect, Try Again Agent! ";
-        result.style.color = "red";
-        keyInputQ7.style.background = "#FF7676";
     }
     result.style.display = "block";
 }
@@ -331,7 +298,7 @@ function hideBigImage() {
 ////////////////////////////////////////////////////////////
 
 function checkCompletion() {
-    if (Q1Check && Q2Check && Q3Check && Q4Check && Q5Check && Q6Check && Q7Check) {
+    if (Q1Check && Q2Check && Q3Check && Q4Check && Q5Check && Q6Check) {
         setPuzzleCompletionStatus(2, 'complete');
         var nextPuzzle = document.getElementById("next-puzzle");
         nextPuzzle.style.display = "block";
