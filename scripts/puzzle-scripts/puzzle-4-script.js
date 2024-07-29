@@ -19,15 +19,15 @@ function changeColor(radio, color) {
 
 // Predefined sequence of checked radio buttons
 const correctSequence = [
-    ['route1-2'], 
+    ['route1-1'], 
     ['route2-2'], 
     ['route3-1'], 
-    ['route4-2'], 
+    ['route4-1'], 
     ['route5-2'], 
     ['route6-2'], 
-    ['route7-1'], 
+    ['route7-1', 'route7-2'], 
     ['route8-1'], 
-    ['route9-1'], 
+    ['route9-2'], 
     ['route10-2']
 ];
 
@@ -67,10 +67,10 @@ function checkSequence() {
         Q4Check = true;
         checkCompletion();
         
-        result.textContent = "Congratulations Agent! You've expertly matched the optimal sensors to each location. Your keen instincts and precision are unmatched!";
+        result.textContent = "Well done, Agent! You've successfully plotted the safest route through the geomagnetic fields to reach the main Peelywally Crystal deposit site at Crystal Mountain. Your careful planning will protect the explorer buggy's electronics. Excellent work!";
         result.style.color = "green";
     } else {
-        result.textContent = "Attention, Agent! It appears the sensors are not optimally selected. Let's reassess and ensure each location has the perfect match. Your mission isn't over yet!";
+        result.textContent = "Alert, Agent! The plotted route does not appear to be the safest path through the geomagnetic fields. The buggy's electronics are at risk. Let's reassess the data and find the correct route to ensure a safe journey to the Peelywally Crystal deposit site.";
         result.style.color = "red";
     }
     result.style.display = "block";
