@@ -115,6 +115,13 @@
 
 
 
+.the-list-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
 
 .the-list {
     display: flex;
@@ -123,7 +130,7 @@
 }
 
 .sortable-list {
-    background: #fff;
+    /* background: #fff; */
     width: 445px;
     border-radius: 6px;
     padding: 30px 25px 20px;
@@ -156,7 +163,7 @@
     width: 43px;
     height: 43px;
     margin-right: 12px;
-    border-radius: 10%;
+    border-radius: 20%;
     object-fit: cover;
 }
 
