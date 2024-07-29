@@ -19,26 +19,24 @@ let points = [
 ];
 
 // Function to generate random coordinates
-//function generateRandomCoordinates() {
- //   const randomCoordinates = [];
-  //  for (let i = 0; i < points.length; i++) {
-  //      const randomY = getRandomInt(1, 7) * gridSize; // Random Y coordinate snapped to grid
-  //      randomCoordinates.push({ x: i * gridSize, y: randomY });
-  //  }
+function generateRandomCoordinates() {
+    const randomCoordinates = [];
+    for (let i = 0; i < points.length; i++) {
+        const randomY = getRandomInt(1, 7) * gridSize; // Random Y coordinate snapped to grid
+        randomCoordinates.push({ x: i * gridSize, y: randomY });
+    }
     // console.log(randomCoordinates);
 
-  //  return randomCoordinates;
-//}
+    return randomCoordinates;
+}
 
 // Function to generate random integer between min and max (inclusive)
-//function getRandomInt(min, max) {
- //   return Math.floor(Math.random() * (max - min + 1)) + min;
-//}
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // Generate random coordinates for initial points
-//points = generateRandomCoordinates();
-
-points = [{x: 100, y:200}];
+points = generateRandomCoordinates();
 
 // Coordinates for x and y lines
 const xLine = [{ x: 0, y: 400 }, { x: 600, y: 400 }];
@@ -64,7 +62,7 @@ function drawGraph() {
     customYText.setAttribute('y', -60); // Adjust the y-coordinate as needed
     customYText.setAttribute('text-anchor', 'middle');
     customYText.setAttribute('transform', 'rotate(-90)');
-    customYText.textContent = 'BPM';
+    customYText.textContent = 'Numbers';
     svg.appendChild(customYText);
     
     // Draw x line
@@ -116,7 +114,7 @@ function drawGraph() {
         svg.appendChild(gridLineY);
     
         // Add coordinates along y axis
-        const labelValue = 120 - i; // Adjust label calculation
+        const labelValue = 400 - i; // Adjust label calculation
         const text = document.createElementNS("http://www.w3.org/2000/svg", 'text');
         text.setAttribute('class', 'text');
         text.setAttribute('x', -25);
