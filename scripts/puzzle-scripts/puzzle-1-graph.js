@@ -18,14 +18,16 @@ let points = [
     { x: 0, y: 0},
 ];
 
+const randomYPoints = [18,18.5,19,19.5,20,20.5,21,21.5,22,22.5,23,23.5,24,24.5,25];
+
 // Function to generate random coordinates
 function generateRandomCoordinates() {
     const randomCoordinates = [];
     for (let i = 0; i < points.length; i++) {
-        const randomY = getRandomInt(1, 7) * gridSize; // Random Y coordinate snapped to grid
-        randomCoordinates.push({ x: i * gridSize, y: randomY });
+        // Adjust the Y-coordinate range to fit within 18 to 25
+        const randomY = Math.floor(Math.random() * randomYPoints.length);
+        randomCoordinates.push({ x: i * gridSize, y: (randomYPoints[randomY] - 18) * gridSize }); // Normalize to SVG space
     }
-    // console.log(randomCoordinates);
 
     return randomCoordinates;
 }
@@ -62,7 +64,7 @@ function drawGraph() {
     customYText.setAttribute('y', -60); // Adjust the y-coordinate as needed
     customYText.setAttribute('text-anchor', 'middle');
     customYText.setAttribute('transform', 'rotate(-90)');
-    customYText.textContent = 'Numbers';
+    customYText.textContent = 'Temperature (degrees °C)';
     svg.appendChild(customYText);
     
     // Draw x line
@@ -95,34 +97,44 @@ function drawGraph() {
 
         // Add coordinates along x axis
         const hour = i / gridSize % 12 || 12; // Convert grid position to 12-hour format
-        // const period = 'PM'; // Set period to PM
         const text = document.createElementNS("http://www.w3.org/2000/svg", 'text');
         text.setAttribute('class', 'text');
         text.setAttribute('x', i);
         text.setAttribute('y', 415);
-        text.textContent = hour + ':00 '; // Display hour and period
+        text.textContent = hour + ':00 '; // Display hour
         svg.appendChild(text);
     }
 
-    for (let i = gridSize; i < 400; i += gridSize) {
+    // Adjusting the grid and labels for the new Y-axis range from 18 to 25
+    for (let i = 0; i <= 7; i++) {
         const gridLineY = document.createElementNS("http://www.w3.org/2000/svg", 'line');
         gridLineY.setAttribute('class', 'grid-line');
         gridLineY.setAttribute('x1', 0);
-        gridLineY.setAttribute('y1', i);
+        gridLineY.setAttribute('y1', i * gridSize);
         gridLineY.setAttribute('x2', 600);
-        gridLineY.setAttribute('y2', i);
+        gridLineY.setAttribute('y2', i * gridSize);
         svg.appendChild(gridLineY);
     
         // Add coordinates along y axis
-        const labelValue = 400 - i; // Adjust label calculation
+        const labelValue = (25 - i).toFixed(1); // Format to one decimal place;
         const text = document.createElementNS("http://www.w3.org/2000/svg", 'text');
         text.setAttribute('class', 'text');
         text.setAttribute('x', -25);
-        text.setAttribute('y', i + 5);
+        text.setAttribute('y', i * gridSize + 5);
         text.textContent = labelValue.toString();
         svg.appendChild(text);
+
+        // Draw half-increment grid lines
+        for (let j = 1; j < 2; j++) { // Adding finer grid lines for halves
+            const gridLineYHalf = document.createElementNS("http://www.w3.org/2000/svg", 'line');
+            gridLineYHalf.setAttribute('class', 'grid-line');
+            gridLineYHalf.setAttribute('x1', 0);
+            gridLineYHalf.setAttribute('y1', i * gridSize + (j * (gridSize / 2)));
+            gridLineYHalf.setAttribute('x2', 600);
+            gridLineYHalf.setAttribute('y2', i * gridSize + (j * (gridSize / 2)));
+            svg.appendChild(gridLineYHalf);
+        }
     }
-    
 
     // Draw points and lines
     for (let i = 0; i < points.length; i++) {
@@ -155,7 +167,6 @@ function drawGraph() {
 
 drawGraph(); // Initial draw
 
-
 // Define function to get y coordinate for a given x coordinate index
 function getYCoordinateForXIndex(xIndex) {
     if (xIndex >= 0 && xIndex < points.length) {
@@ -173,7 +184,16 @@ const maxYCoordinate = 400;
 const xCoordinates = [2, 6, 10]; // Assuming these are the x coordinates you want
 const yCoordinates = xCoordinates.map(x => maxYCoordinate - getYCoordinateForXIndex(x));
 
-// console.log("Y coordinates for x coordinates:", yCoordinates);
+
+function convertValue(input) {
+    return 17 + (input / 25) * 0.5;
+  }
+  
+// Example usage
+console.log(convertValue(yCoordinates[0]));
+console.log(convertValue(yCoordinates[1]));
+console.log(convertValue(yCoordinates[2]));
+
 
 var Q1Check = false;
 var Q2Check = false;
@@ -212,7 +232,7 @@ function checkAnswerQ1() {
     var userAnswer3 = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer1 === yCoordinates[0].toString() && userAnswer2 === yCoordinates[1].toString() && userAnswer3 === yCoordinates[2].toString()) {
+    if (userAnswer1 === convertValue(yCoordinates[0]).toString() && userAnswer2 === convertValue(yCoordinates[1]).toString() && userAnswer3 === convertValue(yCoordinates[2]).toString()) {
         Q1Check = true;
         Q2Check = true;
         Q3Check = true;
@@ -232,7 +252,7 @@ function checkAnswerQ1() {
             keyInputs[i].style.background = "#C8E4B2";
         }
     } else {
-        if (userAnswer1 === yCoordinates[0].toString()) {
+        if (userAnswer1 === convertValue(yCoordinates[0]).toString()) {
             Q1Check = true;
 
             keyInputQ1.disabled = true;
@@ -241,7 +261,7 @@ function checkAnswerQ1() {
             keyInputQ1.style.background = "#FF7676";
         }
 
-        if (userAnswer2 === yCoordinates[1].toString()) {
+        if (userAnswer2 === convertValue(yCoordinates[1]).toString()) {
             Q2Check = true;
 
             keyInputQ2.disabled = true;
@@ -250,7 +270,7 @@ function checkAnswerQ1() {
             keyInputQ2.style.background = "#FF7676";
         }
 
-        if (userAnswer3 === yCoordinates[2].toString()) {
+        if (userAnswer3 === convertValue(yCoordinates[2]).toString()) {
             Q3Check = true;
 
             keyInputQ3.disabled = true;
