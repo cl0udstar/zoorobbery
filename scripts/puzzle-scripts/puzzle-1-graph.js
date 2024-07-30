@@ -279,7 +279,7 @@ function checkAnswerQ1() {
             keyInputQ3.style.background = "#FF7676";
         }
 
-        result.textContent = "Agent, it seems your mission has hit a Norse iceberg. Time for damage control!";
+        result.textContent = "Agent, it seems one of the sensors has failed, Time for damage control!";
         result.style.color = "red";
     }
     result.style.display = "block";
