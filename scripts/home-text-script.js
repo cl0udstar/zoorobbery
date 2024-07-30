@@ -1,13 +1,15 @@
 const div = document.querySelector(".home-text");
-const text1 = "It's Commander Sheonagh MacDonald from the Scottish Space Agency in the year 2052 and we need your help to bring our team of space explorers back from the Plant BRAW5 in the Fearty Galaxy.";
-const text2 = "Our intrepid explorers have ventured further than any other humans to look for Peelywally Crystals which will triple our renewable energy supplies in Scotland.";
-const text3 = "However, whilst doing that, they have run into danger and need you to help them to get home safely.";
-const text4 = "You will complete sever missions which will bring them back to splashdown in the North Sea, just off St Andrews.";
+const text1 = "Detective, we have a serious emergency in our midst!";
+const text2 = "Our newest and most valuable animal has been stolen from the zoo, and we need you to solve the mystery and bring him home. As a seasoned investigator, your exceptional skills in data analysis and problem solving are crucial to cracking this case.";
+const text3 = "Your mission is vital. The theft has caused widespread panic, and the zoo's prized possession is at risk. You must gather clues, analyse data, and track down the thief to recover the stolen animal.";
+const text4 = "This will not be an easy mission - we need a dedicated team of detectives who can interpret data precisely. We cannot let on to the thief we are on his tail, through fear he will hurt our prized possession! We know you have experience in decoding, mapping, and problem solving. You will need to pull on every skill in your repertoire for this one!";
+const text5 = "Good luck, Detective. The health and wellbeing of a scared animal depends on you!";
 
 let text1Finished = false;
 let text2Finished = false;
 let text3Finished = false;
 let text4Finished = false;
+let text5Finished = false;
 
 function textTypingEffect(element, text, i = 0, callback = null) {
     element.innerHTML += text[i];
@@ -42,6 +44,13 @@ textTypingEffect(div, text1, 0, function() {
                         textTypingEffect(div, text4, 0, function() {
                             text4Finished = true;
                             console.log(text4Finished);
+
+                            if (text4Finished) {
+                                textTypingEffect(div, text5, 0, function() {
+                                    text5Finished = true;
+                                    console.log(text5Finished);
+                                });
+                            }
                         });
                     }
                 });
