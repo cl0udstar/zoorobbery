@@ -1,15 +1,18 @@
+// Define a unique prefix for this page
+const PAGE_PREFIX = 'SpaceJourney'; // Change 'page1' to the unique identifier for this page
+
 // Function to set puzzle completion status
 function setPuzzleCompletionStatus(puzzleNumber, status) {
-    // Construct a unique key for the puzzle
-    const key = `puzzle${puzzleNumber}`;
+    // Construct a unique key using the page prefix and puzzle number
+    const key = `${PAGE_PREFIX}_puzzle${puzzleNumber}`;
     // Store the completion status in localStorage
     localStorage.setItem(key, status);
 }
 
 // Function to get puzzle completion status
 function getPuzzleCompletionStatus(puzzleNumber) {
-    // Construct the key for the puzzle
-    const key = `puzzle${puzzleNumber}`;
+    // Construct the key using the page prefix and puzzle number
+    const key = `${PAGE_PREFIX}_puzzle${puzzleNumber}`;
     // Retrieve the completion status from localStorage
     return localStorage.getItem(key);
 }
@@ -25,7 +28,7 @@ function updatePuzzleDivColors() {
         // Update the div color based on the completion status
         if (status === 'complete') {
             div.style.backgroundColor = 'rgb(80, 137, 80)'; // Set color to green if puzzle is complete
-        } 
+        }
     }
 }
 
