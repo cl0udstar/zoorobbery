@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="info_container">
-            <p>This activity is part of a series following the adventures of the Agents of Data and the Evil Vikings!</p>
+            <p>This activity, 'Space Journey', is part of a series following the adventures of the Agents of Data!</p>
             <p>Try out more activities at: <a href="https://dataschools.education/escape/">Data Education in Schools</a></p>
         </div>
 
@@ -35,10 +35,8 @@
             <h3>Meet the team:</h3> 
             <div class="names">
                 <p>Cameron Donnelly</p>
-                <p>Ruben Lazell</p> 
                 <p>Catalin Nanu</p> 
                 <p>Bassam Qureshi</p>
-                <p>Daniel Zukovski</p> 
             </div>
         </div>
 
@@ -47,20 +45,31 @@
 
             if (container) {
                 var paragraphs = container.querySelectorAll("p");
-
+            
                 // Ensure we have at least 3 paragraphs to swap
                 if (paragraphs.length >= 3) {
-                    var first = paragraphs[0]; // First paragraph
-                    var third = paragraphs[2]; // Third paragraph
-
-                    // Randomly decide whether to swap the paragraphs
-                    if (Math.random() < 0.5) { // 50% chance to swap
-                        // Insert the first after the third (essentially swapping them)
-                        container.insertBefore(first, third.nextSibling);
-
-                        // Now move the third to the start (this completes the swap)
-                        container.insertBefore(third, container.firstChild);
+                    // Convert NodeList to array for easier manipulation
+                    paragraphs = Array.from(paragraphs);
+            
+                    // Function to shuffle an array
+                    function shuffle(array) {
+                        for (let i = array.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [array[i], array[j]] = [array[j], array[i]];
+                        }
                     }
+            
+                    // Extract the first three paragraphs
+                    var firstThree = paragraphs.slice(0, 3);
+            
+                    // Shuffle the first three paragraphs
+                    shuffle(firstThree);
+            
+                    // Remove the original first three paragraphs from the container
+                    firstThree.forEach(paragraph => container.removeChild(paragraph));
+            
+                    // Append the shuffled paragraphs back to the container
+                    firstThree.forEach(paragraph => container.appendChild(paragraph));
                 }
             }
         </script>
