@@ -135,7 +135,7 @@ svg.setAttribute('viewBox', '0 0 450 400'); // Adjust the values as needed for z
                 correctMessage.setAttribute('class', 'correct-message');
                 graphContainer.parentNode.insertBefore(correctMessage, graphContainer.nextSibling);
             }
-            correctMessage.textContent = "Correct! The 'Alpaca' shape has been drawn successfully, well done agent!";
+            correctMessage.textContent = "Correct! The 'Delta Canyon' shape has been drawn successfully, well done agent!";
         } else {
             let errorLabel = graphContainer.parentNode.querySelector('.error-message');
             if (!errorLabel) {
