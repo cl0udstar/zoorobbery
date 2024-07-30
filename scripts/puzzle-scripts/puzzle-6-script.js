@@ -250,4 +250,5 @@ svg.addEventListener('click', function(event) {
         points.push(newPoint);
         drawGraph(); // Redraw graph with updated points and lines
     }
+    
 });
