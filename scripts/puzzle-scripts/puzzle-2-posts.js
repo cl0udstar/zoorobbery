@@ -163,7 +163,7 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "12:00" ) {
+    if (userAnswer === "10:00" ) {
         Q3Check = true;
         checkCompletion();
         
