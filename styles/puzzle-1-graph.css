@@ -4,11 +4,10 @@
 
 /* CSS for styling the graph container */
 #graph-container {
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 583px;
     position: relative;
     margin: 100px auto 0px auto;
-    /* border: 1px solid white;  */
 }
 
 /* CSS for styling the points */
@@ -37,6 +36,7 @@
 /* CSS for styling the grid lines */
 .grid-line {
     stroke: lightgrey;
+    stroke-width: 0.5px; /* Make sure the lines are thin enough for fine gridlines */
 }
 
 
