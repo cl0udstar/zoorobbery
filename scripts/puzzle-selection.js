@@ -213,3 +213,4 @@ function handle2ndClick7() {
 
 functionCards();
 unlockFinalMission();
+

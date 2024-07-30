@@ -70,6 +70,17 @@
     max-height: 80%;
 }
 
+.puzzle_container h3 {
+    font-size: xx-large;
+    text-align: left;
+    text-decoration: underline;
+
+
+}
+.puzzle_container p{
+    font-size: larger;
+}
+
 .password-container {
     display: flex;
     justify-content: center;
