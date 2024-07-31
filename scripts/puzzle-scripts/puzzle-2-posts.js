@@ -28,12 +28,26 @@ function showImage(index) {
     }
     captions[index].style.display = 'block';
 
-    // Update the caption
-    const name = document.querySelectorAll('.profile-name');
+    // Update the profile name in the caption
+    const profile_name = document.querySelectorAll('.profile-name');
+    for (let i = 0; i < profile_name.length; i++) {
+        profile_name[i].style.display = 'none';
+    }
+    profile_name[index].style.display = 'block';
+
+    // Update the profile pic
+    const profile_pic = document.querySelectorAll('.p-img');
+    for (let i = 0; i < profile_pic.length; i++) {
+        profile_pic[i].style.display = 'none';
+    }
+    profile_pic[index].style.display = 'block';    
+    
+    // Update the profile name
+    const name = document.querySelectorAll('.name');
     for (let i = 0; i < name.length; i++) {
         name[i].style.display = 'none';
     }
-    name[index].style.display = 'block';
+    name[index].style.display = 'block';       
 
     // Update active dot
     for (let i = 0; i < dots.length; i++) {
