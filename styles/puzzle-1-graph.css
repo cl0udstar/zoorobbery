@@ -41,7 +41,6 @@
 
 
 .answer_container {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -77,6 +76,7 @@
 
 .q-answer {
     padding: 10px;
+    text-align: center;
 }
 
 .user-input {
