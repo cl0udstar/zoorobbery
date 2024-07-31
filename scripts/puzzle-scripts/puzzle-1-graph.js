@@ -45,7 +45,7 @@ function checkAnswerQ1() {
     var userAnswer4 = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer1 === "Emperor Penguin" && userAnswer2 === "Dwarf Crocodile" && userAnswer3 === "Tarantula Spider" && userAnswer4 === "Emperor Penguin"){
+    if (userAnswer1 === "1" && userAnswer2 === "2" && userAnswer3 === "3" && userAnswer4 === "4"){
         Q1Check = true;
         Q2Check = true;
         Q3Check = true;
@@ -66,7 +66,7 @@ function checkAnswerQ1() {
             keyInputs[i].style.background = "#C8E4B2";
         }
     } else {
-        if (userAnswer1 === "Emperor Penguin") {
+        if (userAnswer1 === "1") {
             Q1Check = true;
 
             keyInputQ1.disabled = true;
@@ -75,7 +75,7 @@ function checkAnswerQ1() {
             keyInputQ1.style.background = "#FF7676";
         }
 
-        if (userAnswer2 === "Dwarf Crocodile") {
+        if (userAnswer2 === "2") {
             Q2Check = true;
 
             keyInputQ2.disabled = true;
@@ -84,7 +84,7 @@ function checkAnswerQ1() {
             keyInputQ2.style.background = "#FF7676";
         }
 
-        if (userAnswer3 === "Tarantula Spider") {
+        if (userAnswer3 === "3") {
             Q3Check = true;
 
             keyInputQ3.disabled = true;
@@ -93,7 +93,7 @@ function checkAnswerQ1() {
             keyInputQ3.style.background = "#FF7676";
         }
 
-        if (userAnswer4 === "Emperor Penguin") {
+        if (userAnswer4 === "4") {
             Q3Check = true;
 
             keyInputQ4.disabled = true;
