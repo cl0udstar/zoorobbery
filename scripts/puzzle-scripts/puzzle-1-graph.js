@@ -45,7 +45,7 @@ function checkAnswerQ1() {
     var userAnswer4 = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer1.trim().toLowerCase() === "emperorpenguin" && userAnswer2.trim().toLowerCase() === "dwarfcrocodile" && userAnswer3.trim().toLowerCase() === "tarantulaspider" && userAnswer4.trim().toLowerCase() === "emperorpenguin"){
+    if (userAnswer1.trim().toLowerCase() === "emperor penguin" && userAnswer2.trim().toLowerCase() === "dwarf crocodile" && userAnswer3.trim().toLowerCase() === "tarantula spider" && userAnswer4.trim().toLowerCase() === "emperor penguin"){
         Q1Check = true;
         Q2Check = true;
         Q3Check = true;
@@ -66,7 +66,7 @@ function checkAnswerQ1() {
             keyInputs[i].style.background = "#C8E4B2";
         }
     } else {
-        if (userAnswer1.trim().toLowerCase() === "emperorpenguin") {
+        if (userAnswer1.trim().toLowerCase() === "emperor penguin") {
             Q1Check = true;
 
             keyInputQ1.disabled = true;
@@ -75,7 +75,7 @@ function checkAnswerQ1() {
             keyInputQ1.style.background = "#FF7676";
         }
 
-        if (userAnswer2.trim().toLowerCase() === "dwarfcrocodile") {
+        if (userAnswer2.trim().toLowerCase() === "dwarf crocodile") {
             Q2Check = true;
 
             keyInputQ2.disabled = true;
@@ -84,7 +84,7 @@ function checkAnswerQ1() {
             keyInputQ2.style.background = "#FF7676";
         }
 
-        if (userAnswer3.trim().toLowerCase() === "tarantulaspider") {
+        if (userAnswer3.trim().toLowerCase() === "tarantula spider") {
             Q3Check = true;
 
             keyInputQ3.disabled = true;
@@ -93,7 +93,7 @@ function checkAnswerQ1() {
             keyInputQ3.style.background = "#FF7676";
         }
 
-        if (userAnswer4.trim().toLowerCase() === "emperorpenguin") {
+        if (userAnswer4.trim().toLowerCase() === "emperor penguin") {
             Q3Check = true;
 
             keyInputQ4.disabled = true;
