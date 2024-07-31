@@ -4,9 +4,9 @@ let currentStep = 0;
 let currentLevel = 1;
 const MAX_STEPS = 7; // Define the maximum number of steps
 let flashData = []; // Array to store flash data
-const orignalWords = ["The", "code", "for", "lift", "off", "is", "98DFT2@"];
-const words = ["The", "code", "for", "lift", "off", "is", "98DFT2@"];
-const random_words = ["space", "new", "to", "bird", "meteor", "light", "sensor", "to", "seed", "IOT", "CO2", "ppm", "had", "aviary", "RET£$&", "never", "crystal", "never", "TQ845!", "BU1685!@!", "fall"];
+const orignalWords = ["The", "name", "of", "the", "culprit:", "John", "Knox"];
+const words = ["The", "name", "of", "the", "culprit:", "John", "Knox"];
+const random_words = ["feeding", "humidity", "to", "bird", "times", "mineral", "sensor", "to", "seed", "IOT", "CO2", "ppm", "had", "aviary", "TP99", "never", "chicken", "never", "duck", "temperature", "fall"];
 let errorCount = 0;
 
 shuffleArray(words);
@@ -371,7 +371,7 @@ function assignWordsToRectangles(words, smallRectangles) {
 
 function checkFinalSequence() {
     const rectangleWords = [];
-    const originalWords = ["The", "code", "for", "lift", "off", "is", "98DFT2@"];
+    const originalWords = ["The", "name", "of", "the", "culprit:", "John", "Knox"];
     let correctCount = 0; // Initialize a counter for correct words
 
     // Get the words from the rectangles
