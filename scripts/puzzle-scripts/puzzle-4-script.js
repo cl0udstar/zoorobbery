@@ -20,12 +20,12 @@ function changeColor(radio, color) {
 // Predefined sequence of checked radio buttons
 const correctSequence = [
     ['route1-1'], 
-    ['route2-2'], 
-    ['route3-1'], 
-    ['route4-1'], 
+    ['route2-1'], 
+    ['route3-2'], 
+    ['route4-2'], 
     ['route5-2'], 
-    ['route6-2'], 
-    ['route7-1', 'route7-2'], 
+    ['route6-1'], 
+    ['route7-1'], 
     ['route8-1'], 
     ['route9-2'], 
     ['route10-2']
@@ -68,10 +68,10 @@ function checkSequence() {
         SCheck = true;
         checkCompletion();
         
-        result.textContent = "Well done, Agent! You've successfully plotted the safest route through the geomagnetic fields to reach the main Peelywally Crystal deposit site at Crystal Mountain. Your careful planning will protect the explorer buggy's electronics. Excellent work!";
+        result.textContent = "Fantastic choice, Agent! You've selected the route with the lowest rainfall. You're navigating like a pro!";
         result.style.color = "green";
     } else {
-        result.textContent = "Alert, Agent! The plotted route does not appear to be the safest path through the geomagnetic fields. The buggy's electronics are at risk. Let's reassess the data and find the correct route to ensure a safe journey to the Peelywally Crystal deposit site.";
+        result.textContent = "Uh-oh, Agent! The route you chose has more rainfall than expected. Let's re-evaluate the options and find the driest path!";
         result.style.color = "red";
     }
     result.style.display = "block";
@@ -101,16 +101,16 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer === "82.5" || userAnswer === "82,5") {
+    if (userAnswer === "14.5" || userAnswer === "14,5") {
         Q1Check = true;
         checkCompletion();
         
-        result.textContent = "Awesome job, Agent! You've correctly calculated the average geomagnetic field reading on the safest route. You're a top-notch explorer on your way to Crystal Mountain!";
+        result.textContent = "Great job, Agent! You've correctly calculated the average rainfall for Route A. Your precision is impressive!";
         result.style.color = "green";
         keyInputQ1.disabled = true;
         keyInputQ1.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Uh-oh, Agent! The average geomagnetic field reading seems off. Let's recheck the data to ensure a safe journey!";
+        result.textContent = "Uh-oh, Agent! The average rainfall for Route A seems off. Let's recheck the data to ensure accuracy!";
         result.style.color = "red";
         keyInputQ1.style.background = "#FF7676";
     }
@@ -131,16 +131,16 @@ function checkAnswerQ2() {
     var userAnswer = document.getElementById("userAnswerQ2").value.trim().toLowerCase();
     var result = document.getElementById("result2");
 
-    if (userAnswer === "90") {
+    if (userAnswer === "15.8" || userAnswer === "15,8") {
         Q2Check = true;
         checkCompletion();
         
-        result.textContent = "Awesome job, Agent! You've nailed the average field reading for route Blue. You're a true explorer on the path to adventure!";
+        result.textContent = "Excellent work, Agent! You've accurately determined the average rainfall for Route B. Your skills are top-notch!";
         result.style.color = "green";
         keyInputQ2.disabled = true;
         keyInputQ2.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Uh-oh, Agent! The average field reading for route Blue seems off. Let's double-check the data to ensure a safe and exciting journey!";
+        result.textContent = "Uh-oh, Agent! The average rainfall for Route B seems incorrect. Let's review the data to get the right figures!";
         result.style.color = "red";
         keyInputQ2.style.background = "#FF7676";
     }
@@ -161,16 +161,16 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "87.5" || userAnswer === "87,5") {
+    if (userAnswer === "12.3" || userAnswer === "12,3") {
         Q3Check = true;
         checkCompletion();
         
-        result.textContent = "Fantastic work, Agent! You've correctly figured out the average field reading for route Orange. Your adventure is right on track!";
+        result.textContent = "Great job, Agent! You've accurately calculated the average rainfall for the driest route. Your expertise is commendable!";
         result.style.color = "green";
         keyInputQ3.disabled = true;
         keyInputQ3.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Agent! The average field reading for route Orange doesn't look right. Let's double-check to make sure your journey stays safe!";
+        result.textContent = "Uh-oh, Agent! The average rainfall for the driest route seems off. Let's re-evaluate the data to find the correct figure!";
         result.style.color = "red";
         keyInputQ3.style.background = "#FF7676";
     }
@@ -191,16 +191,16 @@ function checkAnswerQ4() {
     var userAnswer = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result4");
 
-    if (userAnswer === "84") {
+    if (userAnswer === "18") {
         Q4Check = true;
         checkCompletion();
         
-        result.textContent = "Great job, Agent! You've found the lowest average field reading if the route through Delta Canyon is blocked. You're navigating like a pro!";
+        result.textContent = "Fantastic work, Agent! You've correctly identified the average rainfall for the wettest route. Your analysis is spot on!";
         result.style.color = "green";
         keyInputQ4.disabled = true;
         keyInputQ4.style.background = "#C8E4B2";
     } else {
-        result.textContent = "Alert, Agent! The lowest average field reading doesn't seem right. Let's recheck to make sure you find the safest path around Delta Canyon!";
+        result.textContent = "Uh-oh, Agent! The average rainfall for the wettest route seems incorrect. Let's recheck the data to get the right answer!";
         result.style.color = "red";
         keyInputQ4.style.background = "#FF7676";
     }
