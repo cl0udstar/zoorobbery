@@ -28,6 +28,13 @@ function showImage(index) {
     }
     captions[index].style.display = 'block';
 
+    // Update the caption
+    const name = document.querySelectorAll('.profile-name');
+    for (let i = 0; i < name.length; i++) {
+        name[i].style.display = 'none';
+    }
+    name[index].style.display = 'block';
+
     // Update active dot
     for (let i = 0; i < dots.length; i++) {
         dots[i].classList.remove('active');
