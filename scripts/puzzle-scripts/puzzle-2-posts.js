@@ -1,4 +1,11 @@
-// JavaScript for image carousel/slideshow
+// Initialize the likeCounts array based on the initial likes shown in the HTML
+let likeCounts = Array.from(document.querySelectorAll('.react-detail'))
+                       .map(el => parseInt(el.textContent.replace(' likes', '').replace(',', '')) || 0);
+
+// Initialize the likedStatus array with false (not liked) for each post
+let likedStatus = new Array(likeCounts.length).fill(false);
+
+// Initialize the currentIndex
 let currentIndex = 0;
 const images = document.getElementById('image-carousel').children;
 const dots = document.querySelectorAll('.dot');
@@ -49,7 +56,6 @@ function showImage(index) {
     }
     name[index].style.display = 'block';       
 
-
     // Update the geotag name
     const geotag = document.querySelectorAll('.geolocation');
     for (let i = 0; i < geotag.length; i++) {
@@ -57,13 +63,22 @@ function showImage(index) {
     }
     geotag[index].style.display = 'block';       
 
-
-    // Update the geotag name
-    const react_detail = document.querySelectorAll('.react-detail');
-    for (let i = 0; i < react_detail.length; i++) {
-        react_detail[i].style.display = 'none';
+    // Update the react detail (likes count)
+    const react_details = document.querySelectorAll('.react-detail');
+    for (let i = 0; i < react_details.length; i++) {
+        react_details[i].style.display = 'none';
     }
-    react_detail[index].style.display = 'block';        
+    react_details[index].style.display = 'block';
+    react_details[index].innerHTML = `${likeCounts[index].toLocaleString()} likes`; // Update the current react detail with the correct likes count
+
+    // Update the heart icon based on the liked status
+    if (likedStatus[index]) {
+        heart.classList.replace('far', 'fas');
+        heart.style.color = 'red';
+    } else {
+        heart.classList.replace('fas', 'far');
+        heart.style.color = 'white';
+    }
 
     // Update active dot
     for (let i = 0; i < dots.length; i++) {
@@ -79,33 +94,36 @@ dots.forEach((dot, index) => {
     });
 });
 
-postImg.addEventListener('dblclick', () =>{
-
-    heart.classList.replace('far','fas');
-    heart.style.color ='red';
-    document.querySelector('.react-detail').innerHTML = react-detail.length;
+postImg.addEventListener('dblclick', () => {
+    if (!likedStatus[currentIndex]) {
+        heart.classList.replace('far', 'fas');
+        heart.style.color = 'red';
+        likeCounts[currentIndex] += 1; // Increase likes count for current post
+        document.querySelectorAll('.react-detail')[currentIndex].innerHTML = `${likeCounts[currentIndex].toLocaleString()} likes`; // Update the current react detail
+        likedStatus[currentIndex] = true; // Set the liked status to true
+    }
     postImg.classList.add('active');
 
-    setInterval(() => {
+    setTimeout(() => {
         postImg.classList.remove('active');
     }, 1000);
 });
 
-heart.addEventListener('click',handleHeart)
+heart.addEventListener('click', handleHeart);
 
 function handleHeart() {
-    var attr = heart.getAttributeNode("class").value;
-
-    if(attr == 'far fa-heart'){
-        heart.classList.replace('far','fas');
+    if (!likedStatus[currentIndex]) {
+        heart.classList.replace('far', 'fas');
         heart.style.color = 'red';
-        document.querySelector('.react-detail').innerHTML = '2,407 likes';
-    }
-    else if(attr == 'fas fa-heart'){
-        heart.classList.replace('fas','far');
+        likeCounts[currentIndex] += 1; // Increase likes count for current post
+        likedStatus[currentIndex] = true; // Set the liked status to true
+    } else {
+        heart.classList.replace('fas', 'far');
         heart.style.color = 'white';
-        document.querySelector('.react-detail').innerHTML = '2,406 likes';
+        likeCounts[currentIndex] -= 1; // Decrease likes count for current post
+        likedStatus[currentIndex] = false; // Set the liked status to false
     }
+    document.querySelectorAll('.react-detail')[currentIndex].innerHTML = `${likeCounts[currentIndex].toLocaleString()} likes`; // Update the current react detail
 }
 // Show the initial image
 showImage(currentIndex);
@@ -266,7 +284,7 @@ function checkAnswerQ5() {
     var userAnswer = document.getElementById("userAnswerQ5").value.trim().toLowerCase();
     var result = document.getElementById("result5");
 
-    if (userAnswer === "14:00-16:00" || "14:00,16:00" || "14:00, 16:00" || "14:00 to 16:00" || "14:00 16:00" || "2-4" || "2,4" || "2, 4" || "2 to 4" || "2 4") {
+    if (userAnswer === "14:00-16:00" || userAnswer === "14:00,16:00" || userAnswer ===  "14:00, 16:00" || userAnswer ===  "14:00 to 16:00" || userAnswer ===  "14:00 16:00" || userAnswer ===  "2-4" || userAnswer ===  "2,4" || userAnswer === "2, 4" || userAnswer ===  "2 to 4" || userAnswer ===  "2 4") {
         Q5Check = true;
         checkCompletion();
         
@@ -299,7 +317,7 @@ function checkAnswerQ6() {
     var userAnswer = document.getElementById("userAnswerQ6").value.trim().toLowerCase();
     var result = document.getElementById("result6");
 
-    if (userAnswer === "15:00-15:30" || "15:00,15:30" || "15:00, 15:30" || "15:00 to 15:30" || "15:00 15:30" || "3:00-3:30" ||"3:00,3:30" ||"3:00, 3:30" ||"3:00 to 3:30" ||"3:00 3:30" || "3-3:30" || "3,3:30" || "3, 3:30" || "3 to 3:30" || "3 3:30" ) {
+    if (userAnswer === "15:00-15:30" || userAnswer === "15:00,15:30" || userAnswer === "15:00, 15:30" || userAnswer === "15:00 to 15:30" || userAnswer === "15:00 15:30" || userAnswer === "3:00-3:30" || userAnswer === "3:00,3:30" || userAnswer === "3:00, 3:30" || userAnswer === "3:00 to 3:30" || userAnswer === "3:00 3:30" || userAnswer === "3-3:30" || userAnswer === "3,3:30" || userAnswer === "3, 3:30" || userAnswer === "3 to 3:30" || userAnswer === "3 3:30" ) {
         Q6Check = true;
         checkCompletion();
         
