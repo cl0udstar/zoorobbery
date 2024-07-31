@@ -53,7 +53,7 @@ function checkAnswerQ1() {
 
         checkCompletion();
 
-        result.textContent = "Agent, your skills are so sharp, even the Vikings would admire your craftiness.";
+        result.textContent = "Excellent deduction, Agent! Based on the given clues, you've correctly identified the stolen animal. Your investigative skills are exceptional!";
         result.style.color = "green";
         nextPuzzle.style.display = "block";
 
@@ -102,7 +102,7 @@ function checkAnswerQ1() {
             keyInputQ4.style.background = "#FF7676";
         }
 
-        result.textContent = "Agent, it seems one of the sensors has failed. Time for damage control!";
+        result.textContent = "Uh-oh, Agent! That doesn't seem to be the right animal. Let's re-evaluate the clues and make sure we identify the correct one for a successful mission!";
         result.style.color = "red";
     }
     result.style.display = "block";
