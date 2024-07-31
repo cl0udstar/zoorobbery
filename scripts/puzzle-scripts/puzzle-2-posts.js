@@ -134,7 +134,7 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer === "crystal mountain") {
+    if (userAnswer === "1 hour") {
         Q1Check = true;
         checkCompletion();
         
@@ -167,7 +167,7 @@ function checkAnswerQ2() {
     var userAnswer = document.getElementById("userAnswerQ2").value.trim().toLowerCase();
     var result = document.getElementById("result2");
 
-    if (userAnswer === "8,9") {
+    if (userAnswer === "4") {
         Q2Check = true;
         checkCompletion();
         
@@ -200,7 +200,7 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "10:00" ) {
+    if (userAnswer === "48 hours") {
         Q3Check = true;
         checkCompletion();
         
@@ -233,7 +233,7 @@ function checkAnswerQ4() {
     var userAnswer = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result4");
 
-    if (userAnswer === "-15") {
+    if (userAnswer === "reptiles") {
         Q4Check = true;
         checkCompletion();
         
@@ -266,7 +266,7 @@ function checkAnswerQ5() {
     var userAnswer = document.getElementById("userAnswerQ5").value.trim().toLowerCase();
     var result = document.getElementById("result5");
 
-    if (userAnswer === "45") {
+    if (userAnswer === "14:00-16:00" || "14:00,16:00" || "14:00, 16:00" || "14:00 to 16:00" || "14:00 16:00" || "2-4" || "2,4" || "2, 4" || "2 to 4" || "2 4") {
         Q5Check = true;
         checkCompletion();
         
@@ -299,7 +299,7 @@ function checkAnswerQ6() {
     var userAnswer = document.getElementById("userAnswerQ6").value.trim().toLowerCase();
     var result = document.getElementById("result6");
 
-    if (userAnswer === "6.5" ) {
+    if (userAnswer === "15:00-15:30" || "15:00,15:30" || "15:00, 15:30" || "15:00 to 15:30" || "15:00 15:30" || "3:00-3:30" ||"3:00,3:30" ||"3:00, 3:30" ||"3:00 to 3:30" ||"3:00 3:30" || "3-3:30" || "3,3:30" || "3, 3:30" || "3 to 3:30" || "3 3:30" ) {
         Q6Check = true;
         checkCompletion();
         
