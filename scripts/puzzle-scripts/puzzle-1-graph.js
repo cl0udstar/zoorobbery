@@ -45,7 +45,7 @@ function checkAnswerQ1() {
     var userAnswer4 = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer1 === "Emperor Penguin" && userAnswer2 === "Dwarf Crocodile" && userAnswer3 === "Tarantula Spider" && userAnswer4 === "Emperor Penguin"{
+    if (userAnswer1 === "Emperor Penguin" && userAnswer2 === "Dwarf Crocodile" && userAnswer3 === "Tarantula Spider" && userAnswer4 === "Emperor Penguin"){
         Q1Check = true;
         Q2Check = true;
         Q3Check = true;
