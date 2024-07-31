@@ -152,7 +152,7 @@ function checkAnswerQ1() {
     var userAnswer = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer === "1 hour") {
+    if (userAnswer === "1 hour" || userAnswer === "1" || userAnswer === "1 hr" || userAnswer === "1hr") {
         Q1Check = true;
         checkCompletion();
         
@@ -218,7 +218,7 @@ function checkAnswerQ3() {
     var userAnswer = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
     var result = document.getElementById("result3");
 
-    if (userAnswer === "48 hours") {
+    if (userAnswer === "48 hours" || userAnswer === "48" || userAnswer === "48 hr" || userAnswer === "48hr") {
         Q3Check = true;
         checkCompletion();
         
