@@ -99,7 +99,7 @@ function handleHeart() {
     if(attr == 'far fa-heart'){
         heart.classList.replace('far','fas');
         heart.style.color = 'red';
-        document.querySelector('.react-detail').innerHTML = '';
+        document.querySelector('.react-detail').innerHTML = '2,407 likes';
     }
     else if(attr == 'fas fa-heart'){
         heart.classList.replace('fas','far');
