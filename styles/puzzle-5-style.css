@@ -176,7 +176,7 @@
 
 
 .item1.selected, .item2.selected, .letter-button.selected {
-    background-color: gray;
+    background-color: #B2A59B;
 }
 
 .item-controls {
@@ -303,8 +303,8 @@
     padding: 20px 10px;
     text-align: center;
     border: 2px solid;
-    border-radius: 5px;
-    background-color: #ccc;
+    border-radius: 10px;
+    background-color: #B2A59B;
 }
 
 .alphabet1 p, .alphabet2 p {
