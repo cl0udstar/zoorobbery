@@ -1,203 +1,7 @@
-const svg = document.getElementById('graph-svg');
-const graphContainer = document.getElementById('graph-container');
-const gridSize = 50; // Size of the grid squares
-
-// Array to store points
-let points = [
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-    { x: 0, y: 0},
-];
-
-const randomYPoints = [18,18.5,19,19.5,20,20.5,21,21.5,22,22.5,23,23.5,24,24.5,25];
-
-// Function to generate random coordinates
-function generateRandomCoordinates() {
-    const randomCoordinates = [];
-    for (let i = 0; i < points.length; i++) {
-        // Adjust the Y-coordinate range to fit within 18 to 25
-        const randomY = Math.floor(Math.random() * randomYPoints.length);
-        randomCoordinates.push({ x: i * gridSize, y: (randomYPoints[randomY] - 18) * gridSize }); // Normalize to SVG space
-    }
-
-    return randomCoordinates;
-}
-
-// Function to generate random integer between min and max (inclusive)
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Generate random coordinates for initial points
-points = generateRandomCoordinates();
-
-// Coordinates for x and y lines
-const xLine = [{ x: 0, y: 400 }, { x: 600, y: 400 }];
-const yLine = [{ x: 0, y: 0 }, { x: 0, y: 400 }];
-
-// Function to draw points, lines, and axes
-function drawGraph() {
-    svg.innerHTML = ''; // Clear previous drawings
-
-    // Draw custom text for x-axis
-    const customXText = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-    customXText.setAttribute('class', 'text');
-    customXText.setAttribute('x', 300);
-    customXText.setAttribute('y', 450);
-    customXText.setAttribute('text-anchor', 'middle');
-    customXText.textContent = 'Time (PM)';
-    svg.appendChild(customXText);
-    
-    // Draw custom text for y-axis
-    const customYText = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-    customYText.setAttribute('class', 'text');
-    customYText.setAttribute('x', -200);
-    customYText.setAttribute('y', -60); // Adjust the y-coordinate as needed
-    customYText.setAttribute('text-anchor', 'middle');
-    customYText.setAttribute('transform', 'rotate(-90)');
-    customYText.textContent = 'Temperature (degrees °C)';
-    svg.appendChild(customYText);
-    
-    // Draw x line
-    const xLineElement = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-    xLineElement.setAttribute('class', 'line');
-    xLineElement.setAttribute('x1', xLine[0].x);
-    xLineElement.setAttribute('y1', xLine[0].y);
-    xLineElement.setAttribute('x2', xLine[1].x);
-    xLineElement.setAttribute('y2', xLine[1].y);
-    svg.appendChild(xLineElement);
-
-    // Draw y line
-    const yLineElement = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-    yLineElement.setAttribute('class', 'line');
-    yLineElement.setAttribute('x1', yLine[0].x);
-    yLineElement.setAttribute('y1', yLine[0].y);
-    yLineElement.setAttribute('x2', yLine[1].x);
-    yLineElement.setAttribute('y2', yLine[1].y);
-    svg.appendChild(yLineElement);
-
-    // Draw grid lines and add coordinates along axes
-    for (let i = gridSize; i < 600; i += gridSize) {
-        const gridLineX = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-        gridLineX.setAttribute('class', 'grid-line');
-        gridLineX.setAttribute('x1', i);
-        gridLineX.setAttribute('y1', 0);
-        gridLineX.setAttribute('x2', i);
-        gridLineX.setAttribute('y2', 400);
-        svg.appendChild(gridLineX);
-
-        // Add coordinates along x axis
-        const hour = i / gridSize % 12 || 12; // Convert grid position to 12-hour format
-        const text = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-        text.setAttribute('class', 'text');
-        text.setAttribute('x', i);
-        text.setAttribute('y', 415);
-        text.textContent = hour + ':00 '; // Display hour
-        svg.appendChild(text);
-    }
-
-    // Adjusting the grid and labels for the new Y-axis range from 18 to 25
-    for (let i = 0; i <= 7; i++) {
-        const gridLineY = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-        gridLineY.setAttribute('class', 'grid-line');
-        gridLineY.setAttribute('x1', 0);
-        gridLineY.setAttribute('y1', i * gridSize);
-        gridLineY.setAttribute('x2', 600);
-        gridLineY.setAttribute('y2', i * gridSize);
-        svg.appendChild(gridLineY);
-    
-        // Add coordinates along y axis
-        const labelValue = (25 - i).toFixed(1); // Format to one decimal place;
-        const text = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-        text.setAttribute('class', 'text');
-        text.setAttribute('x', -25);
-        text.setAttribute('y', i * gridSize + 5);
-        text.textContent = labelValue.toString();
-        svg.appendChild(text);
-
-        // Draw half-increment grid lines
-        for (let j = 1; j < 2; j++) { // Adding finer grid lines for halves
-            const gridLineYHalf = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-            gridLineYHalf.setAttribute('class', 'grid-line');
-            gridLineYHalf.setAttribute('x1', 0);
-            gridLineYHalf.setAttribute('y1', i * gridSize + (j * (gridSize / 2)));
-            gridLineYHalf.setAttribute('x2', 600);
-            gridLineYHalf.setAttribute('y2', i * gridSize + (j * (gridSize / 2)));
-            svg.appendChild(gridLineYHalf);
-        }
-    }
-
-    // Draw points and lines
-    for (let i = 0; i < points.length; i++) {
-        const point = points[i];
-        const circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-        circle.setAttribute('class', 'point');
-        circle.setAttribute('cx', point.x);
-        circle.setAttribute('cy', point.y);
-        circle.setAttribute('r', '5');
-        svg.appendChild(circle);
-
-        // Set different color for the first point
-        if (i === 0) {
-            circle.setAttribute('fill', 'red'); // Change the color of the first point here
-        }
-
-        // Draw lines between points
-        if (i > 0) {
-            const prevPoint = points[i - 1];
-            const line = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-            line.setAttribute('class', 'line');
-            line.setAttribute('x1', prevPoint.x);
-            line.setAttribute('y1', prevPoint.y);
-            line.setAttribute('x2', point.x);
-            line.setAttribute('y2', point.y);
-            svg.appendChild(line);
-        }
-    }
-}
-
-drawGraph(); // Initial draw
-
-// Define function to get y coordinate for a given x coordinate index
-function getYCoordinateForXIndex(xIndex) {
-    if (xIndex >= 0 && xIndex < points.length) {
-        return points[xIndex].y;
-    } else {
-        console.error("Invalid x index provided.");
-        return null;
-    }
-}
-
-// Define the maximum y-coordinate of your graph
-const maxYCoordinate = 400;
-
-// Get y coordinates for specific x coordinates and adjust them as per your requirement
-const xCoordinates = [2, 6, 10]; // Assuming these are the x coordinates you want
-const yCoordinates = xCoordinates.map(x => maxYCoordinate - getYCoordinateForXIndex(x));
-
-
-function convertValue(input) {
-    return 17 + (input / 25) * 0.5;
-  }
-  
-// Example usage
-console.log(convertValue(yCoordinates[0]));
-console.log(convertValue(yCoordinates[1]));
-console.log(convertValue(yCoordinates[2]));
-
-
 var Q1Check = false;
 var Q2Check = false;
 var Q3Check = false;
+var Q4Check = false;
 
 // First Question
 var keyInputQ1 = document.getElementById("userAnswerQ1");
@@ -224,18 +28,28 @@ keyInputQ3.addEventListener("keypress", function(event) {
     }
 });
 
+var keyInputQ4 = document.getElementById("userAnswerQ4");
+keyInputQ4.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("check-q1").click();
+    }
+});
+
 var nextPuzzle = document.getElementById("next-puzzle");
 
 function checkAnswerQ1() {
     var userAnswer1 = document.getElementById("userAnswerQ1").value.trim().toLowerCase();
     var userAnswer2 = document.getElementById("userAnswerQ2").value.trim().toLowerCase();
     var userAnswer3 = document.getElementById("userAnswerQ3").value.trim().toLowerCase();
+    var userAnswer4 = document.getElementById("userAnswerQ4").value.trim().toLowerCase();
     var result = document.getElementById("result1");
 
-    if (userAnswer1 === convertValue(yCoordinates[0]).toString() && userAnswer2 === convertValue(yCoordinates[1]).toString() && userAnswer3 === convertValue(yCoordinates[2]).toString()) {
+    if (userAnswer1 === "Emperor Penguin" && userAnswer2 === "Dwarf Crocodile" && userAnswer3 === "Tarantula Spider" && userAnswer4 === "Emperor Penguin"{
         Q1Check = true;
         Q2Check = true;
         Q3Check = true;
+        Q4Check = true;
 
         checkCompletion();
 
@@ -243,7 +57,7 @@ function checkAnswerQ1() {
         result.style.color = "green";
         nextPuzzle.style.display = "block";
 
-        var keyInputs = [keyInputQ1, keyInputQ2, keyInputQ3];
+        var keyInputs = [keyInputQ1, keyInputQ2, keyInputQ3, keyInputQ4];
 
         for (var i = 0; i < keyInputs.length; i++) {
             // Disable the input
@@ -252,7 +66,7 @@ function checkAnswerQ1() {
             keyInputs[i].style.background = "#C8E4B2";
         }
     } else {
-        if (userAnswer1 === convertValue(yCoordinates[0]).toString()) {
+        if (userAnswer1 === "Emperor Penguin") {
             Q1Check = true;
 
             keyInputQ1.disabled = true;
@@ -261,7 +75,7 @@ function checkAnswerQ1() {
             keyInputQ1.style.background = "#FF7676";
         }
 
-        if (userAnswer2 === convertValue(yCoordinates[1]).toString()) {
+        if (userAnswer2 === "Dwarf Crocodile") {
             Q2Check = true;
 
             keyInputQ2.disabled = true;
@@ -270,13 +84,22 @@ function checkAnswerQ1() {
             keyInputQ2.style.background = "#FF7676";
         }
 
-        if (userAnswer3 === convertValue(yCoordinates[2]).toString()) {
+        if (userAnswer3 === "Tarantula Spider") {
             Q3Check = true;
 
             keyInputQ3.disabled = true;
             keyInputQ3.style.background = "#C8E4B2";
         } else {
             keyInputQ3.style.background = "#FF7676";
+        }
+
+        if (userAnswer4 === "Emperor Penguin") {
+            Q3Check = true;
+
+            keyInputQ4.disabled = true;
+            keyInputQ4.style.background = "#C8E4B2";
+        } else {
+            keyInputQ4.style.background = "#FF7676";
         }
 
         result.textContent = "Agent, it seems one of the sensors has failed. Time for damage control!";
@@ -286,7 +109,7 @@ function checkAnswerQ1() {
 }
 
 function checkCompletion() {
-    if (Q1Check && Q2Check && Q3Check) {
+    if (Q1Check && Q2Check && Q3Check && Q4Check) {
         setPuzzleCompletionStatus(1, 'complete');
     }
 }
