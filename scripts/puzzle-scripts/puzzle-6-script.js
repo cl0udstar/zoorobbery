@@ -23,7 +23,7 @@ function checkAnswerSecondPuzzle() {
         feedback.classList.add('error-message'); // Add error message class
         feedback.classList.remove('success-message'); // Remove success message class
         // You can provide a hint here, e.g., display a hint message
-        document.getElementById('hint').textContent = "Hint: Correctly plot the coordinates on the graph below to get the password for the laptop.";
+        document.getElementById('hint').textContent = "Hint: Use the table below and the coordinates from the post-it-note above to find what words have been hidden to help you decipher the laptops password.";
         document.getElementById('answer').style.background = "#FF7676";
     }
 }
