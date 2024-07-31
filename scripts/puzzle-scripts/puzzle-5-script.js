@@ -364,7 +364,7 @@ function placeLetter(details) {
             placedCorrectlyNo += 1;
 
             if (placedCorrectlyNo === 10) {
-                result.textContent = "Fantastic work, Agent! You've successfully mapped each rock shape to its letter. Your keen observation skills are stellar!";
+                result.textContent = "Great job, Agent! You've successfully matched each animal to its letter from the information leaflet. Your attention to detail is impressive!";
                 result.style.color = "green";
                 result.style.display = "block";
             }
@@ -402,7 +402,7 @@ function checkAnswerQ1() {
     var result = document.getElementById("resultStep3");
 
     if (userAnswer === sequence) {
-        result.textContent = "Awesome job, Agent! You've correctly matched each rock shape to its letter. Your attention to detail is out of this world!";
+        result.textContent = "Fantastic work, Agent! You've successfully spelled out the letters in order of highest to lowest rating, revealing the code. Your decoding skills are superb!";
         result.style.color = "green";
         keyInputQ1.disabled = true;
         keyInputQ1.style.background = "#C8E4B2";
@@ -412,7 +412,7 @@ function checkAnswerQ1() {
         puzzleContainer2.style.display = 'none';
         puzzleContainer3.style.display = 'none';
     } else {
-        result.textContent = "Oops, Agent! The mapping isn't accurate. Let's scan the screen one more time and uncover that hidden map!";
+        result.textContent = "Uh-oh, Agent! The sequence doesn't seem correct. Let's recheck the ratings and try spelling out the letters again to reveal the correct code!";
         result.style.color = "red";
         keyInputQ1.style.background = "#FF7676";
     }
