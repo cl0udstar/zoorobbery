@@ -4,7 +4,7 @@ function checkAnswerSecondPuzzle() {
     const answer = document.getElementById('answer').value.trim().toLowerCase();
     const feedback = document.getElementById('feedback');
 
-    if (answer === "colder temp") {
+    if (answer === "colder temp" || answer === "coldertemp") {
         feedback.textContent = "Correct, well done agent!";
         feedback.classList.remove('error-message'); // Remove error message class
         feedback.classList.add('success-message'); // Add success message class
@@ -23,7 +23,7 @@ function checkAnswerSecondPuzzle() {
         feedback.classList.add('error-message'); // Add error message class
         feedback.classList.remove('success-message'); // Remove success message class
         // You can provide a hint here, e.g., display a hint message
-        document.getElementById('hint').textContent = "Hint: Use the table below and the coordinates from the post-it-note above to find what words have been hidden to help you decipher the laptops password.";
+        document.getElementById('hint').textContent = "Hint: Use the table below and the coordinates from the information above to find what words have been hidden to help you decipher the laptops password.";
         document.getElementById('answer').style.background = "#FF7676";
     }
 }

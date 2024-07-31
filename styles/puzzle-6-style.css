@@ -74,9 +74,12 @@
     font-size: xx-large;
     text-align: left;
     text-decoration: underline;
-
-
 }
+.puzzle_container h3{
+    text-align: center;
+    font-size: 30px;
+}
+
 .puzzle_container p{
     font-size: larger;
 }
