@@ -27,10 +27,10 @@
     justify-content: center;
     flex-direction: column;
     border: 2px solid;
-    border-radius: 10px;
+    border-radius: 15px;
     width: fit-content;
     padding: 10px;
-    background-color: gray;
+    background-color: #747264;
     position: relative;
     z-index: 1;
 }
@@ -38,8 +38,8 @@
 .keypad-buttons {
     padding: 10px;
     border: 2px solid;
-    border-radius: 5px;
-    background-color: #ccc;
+    border-radius: 10px;
+    background-color: #B2A59B;
     font-size: 20px;
 }
 
