@@ -4,7 +4,7 @@ function checkAnswerSecondPuzzle() {
     const answer = document.getElementById('answer').value.trim().toLowerCase();
     const feedback = document.getElementById('feedback');
 
-    if (answer === "cold temp") {
+    if (answer === "colder temp") {
         feedback.textContent = "Correct, well done agent!";
         feedback.classList.remove('error-message'); // Remove error message class
         feedback.classList.add('success-message'); // Add success message class

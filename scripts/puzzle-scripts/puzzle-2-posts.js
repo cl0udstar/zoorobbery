@@ -49,6 +49,22 @@ function showImage(index) {
     }
     name[index].style.display = 'block';       
 
+
+    // Update the geotag name
+    const geotag = document.querySelectorAll('.geolocation');
+    for (let i = 0; i < geotag.length; i++) {
+        geotag[i].style.display = 'none';
+    }
+    geotag[index].style.display = 'block';       
+
+
+    // Update the geotag name
+    const react_detail = document.querySelectorAll('.react-detail');
+    for (let i = 0; i < react_detail.length; i++) {
+        react_detail[i].style.display = 'none';
+    }
+    react_detail[index].style.display = 'block';        
+
     // Update active dot
     for (let i = 0; i < dots.length; i++) {
         dots[i].classList.remove('active');
@@ -67,7 +83,7 @@ postImg.addEventListener('dblclick', () =>{
 
     heart.classList.replace('far','fas');
     heart.style.color ='red';
-    document.querySelector('.react-detail').innerHTML ='2,407 likes';
+    document.querySelector('.react-detail').innerHTML = react-detail.length;
     postImg.classList.add('active');
 
     setInterval(() => {
@@ -83,7 +99,7 @@ function handleHeart() {
     if(attr == 'far fa-heart'){
         heart.classList.replace('far','fas');
         heart.style.color = 'red';
-        document.querySelector('.react-detail').innerHTML = '2,407 likes';
+        document.querySelector('.react-detail').innerHTML = '';
     }
     else if(attr == 'fas fa-heart'){
         heart.classList.replace('fas','far');
